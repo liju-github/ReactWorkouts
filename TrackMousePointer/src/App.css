@@ -1,0 +1,28 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: yellow;
+}
+
+
+*{
+  cursor: none;
+}
+
+.title{
+  font-family: "Roboto";
+  font-size: 150px;
+  font-weight: bold;
+}
+
+.cursor{
+  height: 52px;
+  width: 52px;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+    pointer-events: none;
+}

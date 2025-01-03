@@ -36,12 +36,21 @@ function ImageSliderV1() {
 
     }, [query])
 
+    const timeoutid = setInterval(() => {
+        imageIndex === imageURLs.length - 1 ? setImageIndex(0) : setImageIndex(imageIndex+1)
+        return ()=>clearInterval(timeoutid)
+    }, 2000)
+
     function ImagePreview() {
         if (error) return (<div>{error}</div>)
 
         return (
             <>
-                <img src={imageURLs[imageIndex]}></img>
+                <img src={imageURLs[imageIndex]} style={{
+                    width: "100px",
+                    height:"100px",
+                    objectFit:"contain"
+                }}></img>
                 <button onClick={Next}>Next</button>
                 <button onClick={Previous}>Previous</button>
             </>
